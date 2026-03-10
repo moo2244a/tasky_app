@@ -13,12 +13,16 @@ class ItemOfListViewTasks extends StatelessWidget {
     required this.widgetStatus,
     required this.widgetPriority,
     required this.formattedDate,
+    this.onTap,
+    this.onPressDelete,
   });
 
   final Task task1;
   final WidgetStatus widgetStatus;
   final WidgetPriority widgetPriority;
   final String formattedDate;
+  final void Function()? onTap;
+  final void Function()? onPressDelete;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +31,12 @@ class ItemOfListViewTasks extends StatelessWidget {
       color: AppColors.kWhite,
 
       child: ListTile(
+        onTap: onTap,
+
+        trailing: IconButton(
+          onPressed: onPressDelete,
+          icon: Icon(Icons.delete, color: Colors.red),
+        ),
         contentPadding: EdgeInsets.symmetric(horizontal: 5),
         leading: SizedBox(
           child: Image.asset(AppAssets.imageItem, fit: .fitHeight),

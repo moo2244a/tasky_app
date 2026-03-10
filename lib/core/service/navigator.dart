@@ -5,6 +5,13 @@ class CustomNavigator {
     Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
   }
 
+  Future<void> pushFuture(BuildContext context, Widget screen) async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => screen),
+    );
+  }
+
   void pop(BuildContext context) {
     Navigator.pop(context);
   }

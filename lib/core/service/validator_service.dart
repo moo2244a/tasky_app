@@ -1,7 +1,5 @@
-class ValidatorService{
-
-
- static String? validateEmail(String? value) {
+class ValidatorService {
+  static String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       return 'Please enter your Email';
     }
@@ -12,16 +10,18 @@ class ValidatorService{
     }
     return null;
   }
- static String? validatePassword(String? value) {
+
+  static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
       return 'Please enter your Password';
     }
-    if (value.length<7) {
+    if (value.length < 7) {
       return 'Please make the Password length at least 8 character';
     }
     return null;
   }
- static String? validateName(String? value) {
+
+  static String? validateName(String? value) {
     if (value == null || value.trim().isEmpty) {
       return 'Please enter your name';
     }
@@ -31,22 +31,12 @@ class ValidatorService{
     }
     return null;
   }
- static String? validatePhoneNumber(String? value) {
+
+  static String? validateTitle(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return 'Please enter your phone number';
+      return 'Please enter your field';
     }
 
-    // This regex allows an optional '+' at the beginning followed by 7-15 digits.
-    final phoneRegex = RegExp(r'^\+?[0-9]{7,15}$');
-
-    if (!phoneRegex.hasMatch(value)) {
-      return 'Please enter a valid phone number';
-    }
     return null;
   }
-
-
-
-
-
 }

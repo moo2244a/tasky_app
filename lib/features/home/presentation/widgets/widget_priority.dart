@@ -6,7 +6,7 @@ class WidgetPriority {
   Widget call(Priority status) {
     Color? color;
     String? text;
-    if (status == Priority.heigh) {
+    if (status == Priority.high) {
       color = Colors.deepOrange;
       text = "Heigh";
     } else if (status == Priority.medium) {
